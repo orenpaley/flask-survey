@@ -5,7 +5,7 @@
 <h1>We have received your responses to {{title}}</h1>
 <h2>Here are your answers</h2>
 
-  {% for k,v in results %}
+  {% for k,v in results.items() %}
   <h3>question: {{k.question}}</h3>
   <h3>answer: {{v}}</h3>
 
