@@ -57,7 +57,7 @@ def getAnswer(id):
   print('*****CHOICE ID*****')
   print('************')
   print(choice, id)
-  if int(id) >= 3:
+  if int(id) >= len(survey.questions) - 1:
     return redirect('/thanks')
   else:
     return redirect(f'/questions/{int(id) + 1}')
