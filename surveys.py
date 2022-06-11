@@ -15,15 +15,19 @@ class Question:
 class Survey:
     """Questionnaire."""
 
-    def __init__(self, title, instructions, questions):
+    def __init__(self, title, instructions, questions, nickname):
         """Create questionnaire."""
 
         self.title = title
         self.instructions = instructions
         self.questions = questions
+        self.nickname = nickname
     
     def getLen(self):
         return len(self.questions)
+    
+    def nickname(self):
+        return self.nickname
 
 
 
@@ -36,7 +40,7 @@ satisfaction_survey = Survey(
         Question("On average, how much do you spend a month on frisbees?",
                  ["Less than $10,000", "$10,000 or more"]),
         Question("Are you likely to shop here again?"),
-    ])
+    ],'satisfaction')
 
 personality_quiz = Survey(
     "Rithm Personality Test",
@@ -49,7 +53,7 @@ personality_quiz = Survey(
         Question("Which is the worst function name, and why?",
                  ["do_stuff()", "run_me()", "wtf()"],
                  allow_text=True),
-    ]
+    ], 'personality'
 )
 
 surveys = {

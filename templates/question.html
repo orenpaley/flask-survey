@@ -4,8 +4,10 @@
 {% block content%} 
 <h1>{{title}}</h1>
 
-<h2>{{id}}: {{questions[id].question}}</h2>
-<form action="/answer/{{id}}">
+<h2>{{id + 1}}: {{questions[id].question}}</h2>
+<form action="/answer/{{survey}}/{{id}}">
+  
+  <!-- <input class="hidden" type="radio" name="survey" value="{{survey}}" readonly> -->
   {% for choice in questions[id].choices %}
   <label for = "{{choice}}">{{choice}}</label>
   <input type="radio" name="choice" value = "{{choice}}">

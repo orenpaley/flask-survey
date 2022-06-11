@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Welcome, Pick A Survey{% endblock %}
+
+{% block content%} 
+<form action="/initialize"> 
+  {% for survey in surveys%}
+  <label for="survey">{{survey}}</label>
+  <input type="radio" value="{{survey}}" name="survey" required>
+  {% endfor %}
+
+  <button>Start Survey</button>
+</form>
+{% endblock %}
